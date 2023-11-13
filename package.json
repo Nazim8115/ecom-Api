@@ -1,0 +1,14 @@
+{
+  "name": "e-com-apis",
+  "version": "1.0.0",
+  "description": "ecom api backend",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "nazim khan",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
