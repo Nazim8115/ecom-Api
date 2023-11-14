@@ -7,3 +7,5 @@ const ProductController = new productController();
 // localhost:/api/products
 
 router.get("/", ProductController.getAllProducts);
+router.post("/", ProductController.addProduct);
+export default router;
