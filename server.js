@@ -1,5 +1,7 @@
 import express from "express";
 const server = express();
+import * as ProductRouter from "./src/features/product/product.routes";
+server.use("api/products", ProductRouter);
 server.get("/", (req, res) => {
   res.send("welcome to api");
 });

@@ -4,3 +4,4 @@ export default class productController {
   rateProduct(req, res) {}
   getOneProduct(req, res) {}
 }
+
