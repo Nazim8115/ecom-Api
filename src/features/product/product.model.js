@@ -21,7 +21,8 @@ var products = [
     "Description for Product 1",
     19.99,
     "https://m.media-amazon.com/images/I/51-nXsSRfZL._SX328_BO1,204,203,200_.jpg",
-    "Cateogory1"
+    "Cateogory1",
+    ["M", "X", "Xl"]
   ),
   new ProductModel(
     2,
