@@ -6,9 +6,12 @@ export default class ProductController {
   }
 
   addProduct(req, res) {
-    console.log(req.body);
-    res.end("this is the post request ");
+    const { name, desc, price, imageUrl, category, sizes } = req.body;
+    ProductModel.addProduct(name, desc, price, imageUrl, category, sizes);
+    const products = ProductModel.GetAll();
+    return res.status(201).send(products);
   }
+
   rateProduct(req, res) {}
 
   getOneProduct(req, res) {

@@ -8,12 +8,28 @@ export default class ProductModel {
     this.category = category;
     this.sizes = sizes;
   }
-
+  // get all products
   static GetAll() {
     return products;
   }
+
+  // get single product by using id
   static findProductById(id) {
     return products.find((p) => p.ide == id);
+  }
+
+  //  add product in products ..
+  static addProduct(name, desc, price, imageUrl, category, sizes) {
+    let newProduct = new ProductModel(
+      products.length + 1,
+      name,
+      desc,
+      price,
+      imageUrl,
+      category,
+      sizes
+    );
+    products.push(newProduct);
   }
 }
 
