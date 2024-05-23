@@ -6,6 +6,9 @@ const productController = new ProductController();
 // all the paths to controller methods
 // localhost:/api/products
 const productRouter = express.Router();
+
 productRouter.get("/", productController.getAllProducts);
+productRouter.get("/:id", productController.getOneProduct);
+
 productRouter.post("/", productController.addProduct);
 export default productRouter;

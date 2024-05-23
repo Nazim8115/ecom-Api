@@ -12,6 +12,9 @@ export default class ProductModel {
   static GetAll() {
     return products;
   }
+  static findProductById(id) {
+    return products.find((p) => p.ide == id);
+  }
 }
 
 var products = [
