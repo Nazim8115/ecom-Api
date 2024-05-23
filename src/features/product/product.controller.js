@@ -6,10 +6,17 @@ export default class ProductController {
   }
 
   addProduct(req, res) {
-    const { name, desc, price, imageUrl, category, sizes } = req.body;
-    ProductModel.addProduct(name, desc, price, imageUrl, category, sizes);
-    const products = ProductModel.GetAll();
-    return res.status(201).send(products);
+    const { name, desc, price, category, sizes } = req.body;
+    const newProduct = {
+      name,
+      desc,
+      category,
+      price: parseFloat(price),
+      sizes: sizes.split(","),
+      imageUrl: req.file.filename,
+    };
+    const createRecord = ProductModel.add(newProduct);
+    return res.status(201).send(createRecord);
   }
 
   rateProduct(req, res) {}

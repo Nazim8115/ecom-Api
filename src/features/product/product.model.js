@@ -1,6 +1,6 @@
 export default class ProductModel {
   constructor(id, name, desc, price, imageUrl, category, sizes) {
-    this.ide = id;
+    this.id = id;
     this.name = name;
     this.desc = desc;
     this.price = price;
@@ -15,21 +15,14 @@ export default class ProductModel {
 
   // get single product by using id
   static findProductById(id) {
-    return products.find((p) => p.ide == id);
+    return products.find((p) => p.id == id);
   }
 
   //  add product in products ..
-  static addProduct(name, desc, price, imageUrl, category, sizes) {
-    let newProduct = new ProductModel(
-      products.length + 1,
-      name,
-      desc,
-      price,
-      imageUrl,
-      category,
-      sizes
-    );
-    products.push(newProduct);
+  static add(product) {
+    product.id = products.length + 1;
+    products.push(product);
+    return product;
   }
 }
 
