@@ -1,7 +1,14 @@
 ProductController 
-Get Products 
-Add a Products 
-Get One Product 
-Rate Product 
+Get Products -Done
+Add One Product -Done
+filter product - Done
+
+Rate Produt.
+Add items to cart
+Get items from cart
+Remove item from cart.
+
+
+
 
 

@@ -23,12 +23,21 @@ export default class ProductController {
 
   getOneProduct(req, res) {
     const id = req.params.id;
-    console.log(id);
     const product = ProductModel.findProductById(id);
     if (product) {
       return res.status(200).send(product);
     } else {
       res.status(404).send("Product not found");
     }
+  }
+
+  // filter products...............
+  filterProducts(req, res) {
+    const minPrice = req.query.minPrice;
+    const maxPrice = req.query.maxPrice;
+    const category = req.query.category;
+    console.log(minPrice);
+    const result = ProductModel.filter(minPrice, maxPrice, category);
+    res.status(200).send(result);
   }
 }

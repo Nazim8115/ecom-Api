@@ -24,11 +24,23 @@ export default class ProductModel {
     products.push(product);
     return product;
   }
+
+  // filter products ............
+  static filter(minPrice, maxPrice, category) {
+    const result = products.filter((product) => {
+      return (
+        (!minPrice || product.price >= minPrice) &&
+        (!maxPrice || product.price <= maxPrice) &&
+        (!category || product.category == category)
+      );
+    });
+    return result;
+  }
 }
 
 var products = [
   new ProductModel(
-    1,
+    1,  
     "Product 1",
     "Description for Product 1",
     19.99,
