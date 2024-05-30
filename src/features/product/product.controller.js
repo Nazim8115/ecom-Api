@@ -7,6 +7,7 @@ export default class ProductController {
 
   addProduct(req, res) {
     const { name, desc, price, category, sizes } = req.body;
+    
     const newProduct = {
       name,
       desc,

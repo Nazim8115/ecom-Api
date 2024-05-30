@@ -1,11 +1,14 @@
 import express from "express";
 const server = express();
 import bodyParser from "body-parser";
+server.use(bodyParser.json());
+server.use(express.json());
+
 import productRouter from "./src/features/product/product.routes.js";
 import userRouter from "./src/features/user/user.routes.js";
-server.use(bodyParser.json());
-server.use("/api/products", productRouter);
 server.use("/api/users", userRouter);
+server.use("/api/products", productRouter);
+
 server.get("/", (req, res) => {
   res.send("welcome to Ecom api");
 });

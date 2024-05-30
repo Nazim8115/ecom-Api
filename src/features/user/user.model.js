@@ -11,6 +11,7 @@ export default class userModel {
     const newUser = new userModel(name, email, password, type);
     newUser.id = users.length + 1;
     users.push(newUser);
+    return newUser;
   }
 
   static signIn(email, password) {
