@@ -6,6 +6,11 @@ export default class userModel {
     this.type = type;
     this.id = id;
   }
+
+  // getAll
+  static getAll() {
+    return users;
+  }
   // signUp user
   static signUp(name, email, password, type) {
     const newUser = new userModel(name, email, password, type);
