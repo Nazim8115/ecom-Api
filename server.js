@@ -6,8 +6,10 @@ server.use(express.json());
 import basicAuthorizer from "./src/middleware/basicAuth.middleware.js";
 import productRouter from "./src/features/product/product.routes.js";
 import userRouter from "./src/features/user/user.routes.js";
+import jwtAuth from "./src/middleware/jwt.middleware.js";
+
 server.use("/api/users", userRouter);
-server.use("/api/products", basicAuthorizer, productRouter);
+server.use("/api/products", jwtAuth, productRouter);
 
 server.get("/", (req, res) => {
   res.send("welcome to Ecom api");
