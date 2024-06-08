@@ -9,6 +9,11 @@ Get items from cart
 Remove item from cart.
 
 
+userController 
+signup - Email, name, password, typeOfUser(customer ,seller)-Done
+signin - (Email, password) - Done
 
+
+    
 
 

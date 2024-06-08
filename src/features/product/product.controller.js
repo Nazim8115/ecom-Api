@@ -7,7 +7,7 @@ export default class ProductController {
 
   addProduct(req, res) {
     const { name, desc, price, category, sizes } = req.body;
-    
+
     const newProduct = {
       name,
       desc,
@@ -19,8 +19,6 @@ export default class ProductController {
     const createRecord = ProductModel.add(newProduct);
     return res.status(201).send(createRecord);
   }
-
-  rateProduct(req, res) {}
 
   getOneProduct(req, res) {
     const id = req.params.id;
@@ -40,5 +38,17 @@ export default class ProductController {
     console.log(minPrice);
     const result = ProductModel.filter(minPrice, maxPrice, category);
     res.status(200).send(result);
+  }
+  // Rate product.....
+  rateProduct(req, res) {
+    const userID = req.query.userID;
+    const productID = req.query.productID;
+    const rating = req.query.rating;
+    const error = ProductModel.rateProduct(userID, productID, rating);
+    if (error) {
+      return res.status(400).send(error);
+    } else {
+      return res.status(200);
+    }
   }
 }
