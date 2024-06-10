@@ -12,7 +12,7 @@ const jwtAuth = (req, res, next) => {
   //   3.Check if token is valid
   try {
     const payload = jwt.verify(token, "ZV2GUFPm1kUpaZGEUl6pHXeHdzvgK8Jm");
-    console.log(payload);
+    req.userID = payload.userID;
   } catch (error) {
     //    4. return error
     return res.status(401).send("Unauthorized");
