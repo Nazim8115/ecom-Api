@@ -4,8 +4,8 @@ Add One Product -Done
 filter product - Done
 
 Rate Produt.
-Add items to cart
-Get items from cart
+Add items to cart -Done
+Get items from cart -Done
 Remove item from cart.
 
 

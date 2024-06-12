@@ -34,4 +34,11 @@ var users = [
     password: "password1",
     type: "seller",
   },
+  {
+    id: 2,
+    name: "Customer user",
+    email: "customer123@gmail.com",
+    password: "custom",
+    type: "customer",
+  },
 ];
