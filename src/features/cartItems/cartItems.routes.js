@@ -7,4 +7,5 @@ const cartItemsController = new CartItemsController();
 
 cartRouter.post("/", cartItemsController.add);
 cartRouter.get("/", cartItemsController.get);
+cartRouter.delete("/:id", cartItemsController.delete);
 export default cartRouter;

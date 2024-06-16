@@ -8,6 +8,7 @@ export default class CartItemModel {
   }
 
   static add(productID, userID, quantity) {
+    // 1. check if product already exists in the cart for the same user.
     const existCardItem = cartItems.find(
       (item) => item.userID == userID && item.productID == productID
     );
@@ -26,6 +27,22 @@ export default class CartItemModel {
 
   static get(userID) {
     return cartItems.filter((u) => u.userID === userID);
+  }
+
+  //   delete a cart
+
+  static delete(cartItemID, userID) {
+    console.log(cartItemID);
+    console.log(userID);
+    const cartItemIndex = cartItems.findIndex(
+      (cart) => cart.id == cartItemID && cart.userID == userID
+    );
+
+    if (cartItemIndex == -1) {
+      return "cart not found !";
+    } else {
+      cartItems.splice(cartItemIndex, 1);
+    }
   }
 }
 

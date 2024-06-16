@@ -12,4 +12,15 @@ export default class CartItemsController {
     const items = CartItemModel.get(userID);
     return res.status(200).send(items);
   }
+
+  delete(req, res) {
+    const userID = req.userID;
+    const cartItemID = req.params.id;
+    console.log(cartItemID);
+    const error = CartItemModel.delete(cartItemID, userID);
+    if (error) {
+      return res.status(404).send(error);
+    }
+    res.status(200).send("Cart item is removed !");
+  }
 }
